@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:onClick="screenClicked"
+    android:id = "@+id/rlBody" >
+
+    <TextView
+        android:id="@+id/pbPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:height="80sp"
+        android:width="20dp" />
+
+    <TextView
+        android:id="@+id/tvBlack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvWhite"
+        android:layout_alignBottom="@+id/tvWhite"
+        android:layout_toRightOf="@+id/pbPlay"
+        android:text="5:00"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="75sp" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/tvWhite"
+        android:layout_below="@+id/tvWhite"
+        android:text="White"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView1"
+        android:layout_alignBottom="@+id/textView1"
+        android:layout_toRightOf="@+id/pbPlay"
+        android:text="Black"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="20sp" />
+
+    <ProgressBar
+        android:id="@+id/pbWhite"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/pbPlay"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/pbPlay" />
+
+    <ProgressBar
+        android:id="@+id/pbBlack"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/pbPlay"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@+id/pbPlay" />
+
+    <TextView
+        android:id="@+id/tvWhite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/pbPlay"
+        android:text="5:00"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="75sp" />
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/pbWhite"
+        android:layout_centerHorizontal="true"
+        android:text="Stopped"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="30sp" />
+
+</RelativeLayout>

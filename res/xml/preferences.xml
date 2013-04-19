@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <CheckBoxPreference 
+        android:title="Equal starting values"
+        android:summary="Set equal values for both players"
+        android:defaultValue="sameValuesForBothPlayers"            
+        android:key="sameSettings"
+        android:disableDependentsState="true" />
+    
+    <!--  Whites settings -->
+    <PreferenceCategory android:title="White">
+	    <EditTextPreference 
+	        android:title="Hours" 
+	        android:summary="Initial amount of hours on the clock"
+	        android:defaultValue="0" 
+	        android:key="hours_white" 
+	        android:numeric="integer" />
+	    <EditTextPreference 
+	       android:title="Minutes" 
+	        android:summary="Initial amount of minutes on the clock"
+	        android:defaultValue="5" 
+	        android:key="minutes_white" 
+	        android:numeric="integer" />
+	    <EditTextPreference 
+	       android:title="Seconds" 
+	        android:summary="Initial amount of seconds on the clock"
+	        android:defaultValue="0" 
+	        android:key="seconds_white" 
+	        android:numeric="integer" />
+    </PreferenceCategory>
+    
+    <!-- Blacks settings -->
+    <PreferenceCategory android:title="Black">
+	    <EditTextPreference 
+	        android:title="Hours" 
+	        android:summary="Initial amount of hours on the clock"
+	        android:defaultValue="0" 
+	        android:key="hours_black" 
+	        android:numeric="integer" 
+	        android:dependency="sameSettings"/>
+	    <EditTextPreference 
+	        android:title="Minutes" 
+	        android:summary="Initial amount of minutes on the clock"
+	        android:defaultValue="5" 
+	        android:key="minutes_black" 
+	        android:numeric="integer" 
+	        android:dependency="sameSettings"/>
+	    <EditTextPreference 
+	        android:title="Seconds" 
+	        android:summary="Initial amount of seconds on the clock"
+	        android:defaultValue="0" 
+	        android:key="seconds_black" 
+	        android:numeric="integer" 
+	        android:dependency="sameSettings"/>
+    </PreferenceCategory>
+    
+    <!-- fischer style settings -->
+    <PreferenceCategory android:title="Bonus seconds">
+	    <CheckBoxPreference 
+	        android:title="Use bonus seconds"
+	        android:summary="Players will recieve bonus seconds on round completion"
+	        android:defaultValue="true"
+	        android:key="usingBonusSeconds"/>
+	    <CheckBoxPreference 
+	        android:title="Add after turn"
+	        android:summary="When to add bonus seconds"
+	        android:dependency="usingBonusSeconds"
+	        android:key="addBonusSecondsAfterTurn"
+	        android:defaultValue="true"/>
+	    <EditTextPreference 
+	        android:title="Bonus amount"
+	        android:summary="How many seconds to add"
+	        android:dependency="usingBonusSeconds"
+	        android:defaultValue="3"
+	    	android:key="bonusSeconds"
+	    	android:numeric="integer" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
